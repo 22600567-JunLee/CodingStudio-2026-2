@@ -1,7 +1,12 @@
 # C 프로그래밍 · GitHub 실습
 
-GitHub와 VS Code로 C 코드를 가져와서, 고치고, 컴파일하고, 다시 올리는 과정을 한 번 해보는 저장소입니다.
-앞으로 나올 과제도 같은 방법으로 진행합니다.
+GitHub와 VS Code로 C 코드를 가져와서, 고치고, 컴파일하고, 다시 올리는 과정을 위한 **안내 페이지**입니다.
+실습은 아래 **실습 저장소**를 Fork해서 진행합니다. 앞으로 나올 과제도 같은 방법으로 진행합니다.
+
+## 실습 저장소
+
+- 오늘 실습: https://github.com/kkim-hgu/CodingStudioW14_1
+- 일찍 끝나면 한 번 더: https://github.com/kkim-hgu/CodingStudioW14_2
 
 ## 링크 모음
 
@@ -59,37 +64,36 @@ git config --global user.email "GitHub 가입 이메일"
 
 ### 4. 컴파일과 실행
 
+실습 저장소 폴더를 VS Code로 연 상태에서, VS Code 터미널에 입력합니다.
+
 ```bash
-gcc hello.c -o hello
+gcc main.c -o main
 ```
 
-Windows (PowerShell)
+Windows (PowerShell): 한글이 깨지지 않게 `chcp 65001`을 먼저 입력합니다 (터미널을 새로 열 때마다 한 번).
 
 ```powershell
-.\hello.exe
+chcp 65001
+```
+
+```powershell
+.\main.exe
 ```
 
 Mac
 
 ```bash
-./hello
+./main
 ```
 
 ## 할 일
 
-1. 이 저장소를 **Fork** 해서 내 계정으로 복사합니다 (오른쪽 위 `Fork` 버튼).
+1. 실습 저장소를 **Fork** 해서 내 계정으로 복사합니다 (오른쪽 위 `Fork` 버튼).
 2. **내 Fork**를 VS Code로 **Clone** 합니다 (Source Control → Clone Repository).
-3. `hello.c`에 내 이름을 출력하는 `printf` 한 줄을 추가하고 저장합니다 (Ctrl/Cmd + S).
-4. 위의 명령어로 컴파일하고 실행합니다.
-5. VS Code Source Control에서 `hello.c`만 `+` → 메시지 입력 → **Commit** → **Sync Changes** 로 올립니다.
+3. `main.c`의 `count = loadMembers(members);` 바로 아래에 `printf("Edited by 내이름\n");` 한 줄을 추가하고 저장합니다 (Ctrl/Cmd + S).
+4. 위의 명령어로 컴파일하고 실행합니다. `40명이 저장된 파일을 읽었습니다.` 다음에 내 printf가 보이면 성공입니다. 메뉴에서 `1`은 목록, `0`은 종료입니다.
+5. VS Code Source Control에서 `main.c`만 `+` → 메시지 입력 → **Commit** → **Sync Changes** 로 올립니다.
 6. 내 GitHub 저장소 페이지에서 커밋이 올라갔는지 확인합니다.
-
-## 실행 결과 예시
-
-```
-Hello, C!
-My name is Gildong
-```
 
 ## 자주 막히는 곳
 
@@ -101,8 +105,10 @@ My name is Gildong
 | Commit 때 "Please tell me who you are" | 위 3번 `git config` 두 줄 다시 입력 |
 | Push 때 403 / Permission denied | 원본이 아니라 **내 Fork**를 Clone했는지 확인 |
 | 수정했는데 실행 결과가 그대로 | 저장(Ctrl/Cmd + S) 후 다시 컴파일 |
-| 한글 출력이 깨짐, 이상한 컴파일 에러 | 출력 문구는 영어로, 폴더 경로에서 한글·공백 빼기 (예: `C:\dev`) |
+| Windows: 한글 메뉴가 깨져 보임 | 실행 전에 `chcp 65001` 입력 (터미널마다 한 번) |
+| 실행하자마자 프로그램이 꺼짐 | `members.txt`가 있는 저장소 폴더에서 실행 |
+| 이상한 컴파일·경로 에러 | 폴더 경로에서 한글·공백 빼기 (예: `C:\dev`) |
 
 ## 참고
 
-- 실행 파일(`hello`, `hello.exe`)은 `.gitignore`에 들어 있어서 올라가지 않습니다. 코드(`.c`)만 올리면 됩니다.
+- 실행 파일은 올리지 않습니다. Windows의 `main.exe`는 자동으로 빠지지만, Mac의 `main`은 Source Control 목록에 보이니 `+` 하지 마세요. `main.c`만 올리면 됩니다.
