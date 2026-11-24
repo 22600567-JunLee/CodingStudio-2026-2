@@ -117,4 +117,3 @@ Mac
 ## 참고
 
 - 실행 파일은 올리지 않습니다. Windows의 `main.exe`는 자동으로 빠지지만, Mac의 `main`은 Source Control 목록에 보이니 `+` 하지 마세요. `main.c`만 올리면 됩니다.
-jk
