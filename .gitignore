@@ -1,0 +1,11 @@
+# 컴파일해서 생긴 실행 파일은 올리지 않습니다
+hello
+*.exe
+*.out
+*.o
+*.dSYM/
+
+# 에디터 / OS가 만드는 파일
+.vscode/
+.DS_Store
+Thumbs.db
